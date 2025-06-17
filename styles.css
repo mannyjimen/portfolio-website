@@ -6,7 +6,7 @@
 
 body{
     font-family: JetBrains;
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(25, 25, 25);
     color: white;
 
     padding: 10px;
@@ -15,20 +15,26 @@ body{
     justify-content: center;
 }
 
-h1{
+.headerDiv{
+    display: flex;
+}
+
+.main-name{
+    color: rgb(200,200,255);
     margin-top: 0px;
 }
 
-h1:hover{
+.main-name:hover, .subtitle:hover, .arsenal{
     color: rgb(250,100,100);
     transition: color 0.1s;
+    cursor: pointer;
 }
 
 .main-section{
     display: flex;
     flex-direction: column;
 
-    flex-basis: 700px;
+    flex-basis: 900px;
 }
 
 ul{
@@ -42,4 +48,16 @@ ul{
 a{
     text-decoration: none;
     color: gray;
+}
+
+.subtitle{
+    color: rgb(200,200,255);
+}
+
+.arsenal{
+    display: flex;
+}
+
+.mainSubtitleDiv{
+    color: rgb(200,200,200);
 }
