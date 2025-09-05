@@ -1,18 +1,24 @@
 @font-face {
-    font-family: JetBrains;
+    font-family: mononoki;
     src: 
-        url("./fonts/JetBrainsMonoNL-Regular.ttf")
+        url("./fonts/Lato-Italic.ttf")
+}
+@font-face {
+    font-family: Lato-Light;
+    src: 
+        url("./fonts/Lato-Light.ttf")
 }
 
 body{
-    font-family: JetBrains;
+    letter-spacing: 1px;
+    font-family: Lato-Light;
     background-color: rgb(25, 25, 25);
     color: white;
 
     padding: 10px;
-    
     display: flex;
     justify-content: center;
+    font-size: 110%;
 }
 
 .headerDiv{
@@ -24,7 +30,7 @@ body{
     margin-top: 0px;
 }
 
-.main-name:hover, .subtitle:hover, .arsenal{
+.main-name:hover, .subtitle:hover, .arsenal, .projectName:hover{
     color: rgb(250,100,100);
     transition: color 0.1s;
     cursor: pointer;
@@ -34,7 +40,11 @@ body{
     display: flex;
     flex-direction: column;
 
-    flex-basis: 900px;
+    flex-basis: 790px;
+}
+
+p {
+    font-size: 103%;
 }
 
 ul{
@@ -45,19 +55,35 @@ ul{
     margin: 0;
 }
 
-a{
+a.topPageLink{
     text-decoration: none;
     color: gray;
 }
 
-.subtitle{
+.subtitleDiv{
+    display: flex;
+    margin-top: -10px;
+    margin-bottom: -25px;
     color: rgb(200,200,255);
 }
 
-.arsenal{
-    display: flex;
+.mainSubtitleDiv{
+    color: rgb(255, 153, 76);
 }
 
-.mainSubtitleDiv{
-    color: rgb(200,200,200);
+.specificName {
+    color: rgb(62, 182, 243);
+    display: block;
+    text-decoration: none;
+}
+
+.projectHeader {
+    font-size: large;
+    display: flex;
+    gap: 20px;
+}
+
+.projectName {
+    text-decoration: none;
+    color: orange;
 }
