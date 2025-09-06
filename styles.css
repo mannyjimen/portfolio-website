@@ -26,12 +26,12 @@ body{
 }
 
 .main-name{
-    color: rgb(200,200,255);
+    color: rgb(230, 84, 84);
     margin-top: 0px;
 }
 
 .main-name:hover, .subtitle:hover, .arsenal, .projectName:hover{
-    color: rgb(250,100,100);
+    color: rgb(126, 82, 2);
     transition: color 0.1s;
     cursor: pointer;
 }
@@ -64,7 +64,7 @@ a.topPageLink{
     display: flex;
     margin-top: -10px;
     margin-bottom: -25px;
-    color: rgb(200,200,255);
+    color: rgb(230, 84, 84);
 }
 
 .mainSubtitleDiv{
