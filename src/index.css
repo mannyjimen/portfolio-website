@@ -12,11 +12,21 @@ body {
 
   font-family: var(--font-monospace);
   font-weight: 200;
-  margin-right: 50%;
-  margin-top: 3%;
+  /* margin-right: 50%;
+  margin-top: 3%; */
 
-    display: flex;
-  justify-content: center;
+}
+
+.container {
+  margin-top: 5%;
+  margin-left: 13%;
+
+  width: fit-content;
+
+  max-width: 650px;
+  min-height: 100vh;
+
+  display: block;
 }
 
 .name-style {
@@ -39,7 +49,7 @@ ul {
   color: var(--accent-color)
 }
 
-.project-section-title{
+.project-section-title, .blogposts-section-title{
   font-weight: 300;
   color: var(--accent-color);
 }
