@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { ScrambleText } from '../components/ScrambleText';
 import matter from 'gray-matter';
-import { Buffer } from 'buffer';
 import "../index.css";
 
 function PostDetail() {
