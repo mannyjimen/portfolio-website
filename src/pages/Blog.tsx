@@ -57,8 +57,8 @@ function Blog() {
             the projects/software i am working on.
 
             <br></br><br></br>
-            i dont really write a lot, sorry if theres <br></br>
-            any grammatical mistakes :(
+            i dont really write a lot, so there might <br></br>
+            be some bad grammar... sorry :)
           </p>
         </div>
 

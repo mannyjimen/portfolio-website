@@ -46,12 +46,23 @@ ul {
 }
 
 .top-page-link {
-  color: var(--accent-color)
+  color: var(--accent-color);
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+.top-page-link:hover {
+  text-decoration: underline;
+  color:grey;
 }
 
 .project-section-title, .blogposts-section-title{
   font-weight: 300;
-  color: var(--accent-color);
+  color: white;
+  border-bottom: 2px solid #333;
+  padding-bottom: 6px;
+  margin-bottom: 1rem;
+  /* text-decoration: underline; */
+  /* text-underline-offset: 4px; */
 }
 
 .project-name {
@@ -59,12 +70,22 @@ ul {
   font-weight: bolder;
   font-family: var(--font-monospace);
   letter-spacing: 0.5px;
-  color: var(--text-color);
-  text-decoration: none;
+  color: var(--accent-color);
+  text-decoration:none;
 }
 
 .project-blurb {
+  color: var(--text-color);
   margin-top: 5px;
+}
+
+.projects, .blogs {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blogs {
+  margin-top: 1rem !important;
 }
 
 .markdown-body {
