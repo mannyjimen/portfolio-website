@@ -63,6 +63,7 @@ function Home() {
           <h2 className="project-section-title">projects\n</h2>
           <div className="project">
             <a className="project-name" href="https://github.com/mannyjimen/Monkey-Compiler" target="_blank">monkey compiler</a>
+            <Link to="/compiler" className="top-page-link demo-link">[demo]</Link>
             <p className="project-blurb">currently building a compiler from scratch in Go.
               <br></br>
               contains lexer, parser, bytecode compiler, and virtual machine.

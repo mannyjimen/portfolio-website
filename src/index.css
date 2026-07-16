@@ -156,3 +156,8 @@ ul {
 .markdown-body h3:first-of-type{
   margin-top: 0.5rem;
 }
+
+.demo-link {
+  margin-left: 1rem;
+  opacity: 0.9;
+}

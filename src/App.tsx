@@ -18,7 +18,7 @@ function App() {
         {/* renders blog posts individually (on click) */}
         <Route path="/blog/:slug" element={<PostDetail />} />
         
-        <Route path="/test" element={<CompilerDemo />} />
+        <Route path="/compiler" element={<CompilerDemo />} />
       </Routes>
     </Router>
   );
