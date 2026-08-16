@@ -86,6 +86,40 @@ x + " world!";`);
                 </div>
 
             </div>
+            <div>
+                <br></br>
+                <h3>documentation (current state): </h3>
+
+                No designated <strong>print</strong> function (yet).
+                The last expression seen will be the only value printed.
+                <br></br>
+                In the code box below, we can see three expression statements, however, since the 3rd
+                line is the last expression processed in the program, its value (7) will be printed;
+                <br></br>
+
+                <div className='example-container'>
+                {/*code text box*/}
+                <div className='pane'>
+                    <div className='pane-header'>demo.mnky</div>
+                    <textarea
+                        className='code-editor'
+                        value = {`5 + 2;\n"hello" + "world";\n3 + 4;`}
+                        rows = {6}
+                    />
+                </div>
+
+                {/*output text box*/}
+                <div className='pane'>
+                    <div className='pane-header'>output</div>
+                    <div className='output-text-box'>
+                    {"7"}
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+
         </div>
     );
 }
