@@ -1,13 +1,30 @@
 import { useState, useEffect } from 'react';
 import { ScrambleText} from '../components/ScrambleText';
+import CodePane from '../components/CodePane';
 import "../index.css";
 import "./CompilerDemo.css"
+
+const DOC_EXAMPLES = [
+    {
+        title: "expression evaluation / print",
+        example_filename: "expression_print.mnky",
+        description: `No designated print function (yet). The last expression evaluated will be the only value printed.\n\nIn the code box below, we can see three expression statements, however, since the 3rd line is the last expression processed in the program, its value (7) will be printed`,
+        code: `5 + 2;\n"hello" + "world";\n3 + 4;`,
+        output: "7",
+    },
+    {
+        title: "variable bindings",
+        example_filename: "bindings.mnky",
+        description: `Can bind values to identifiers using keyword "let".\nCan follow the format "let <identifier> = <expression>;" for standard variable binding.\n\nIn the code box below, we bind "first_name" to string literal "john", and "last_name" to "doe". We then concatenate the first and last name identifiers (along with a space in between).`,
+        code: `let first_name = "john";\nlet last_name = "doe";\nfirst_name + " " + last_name;`,
+        output: `john doe`,
+    }
+]
 
 function CompilerDemo() {
     //three react variables
     const [isReady, setIsReady] = useState(false);
-    const [sourceCode, setSourceCode] = useState(`let x = "hello";
-x + " world!";`);
+    const [sourceCode, setSourceCode] = useState(`let x = "hello";\nx + " world!";`);
     const [output, setOutput] = useState(``);
 
     useEffect(() => {
@@ -33,7 +50,7 @@ x + " world!";`);
         };
     }, []);
 
-    //will run on startup only
+    //will run initial monkey code once wasm is ready
     useEffect(() => {
         if (isReady) {
             //@ts-ignore
@@ -55,71 +72,36 @@ x + " world!";`);
             <h1 className='name-style'>
                 <ScrambleText text="monkey compiler demo" />
             </h1>
-            <div className='demo-container'>
-                {/*code text box*/}
-                <div className='pane'>
-                    <div className='pane-header'>demo.mnky</div>
-                    <textarea
-                        className='code-editor'
-                        value = {sourceCode}
-                        onChange = {(e) => setSourceCode(e.target.value)}
-                        rows = {6}
-                    />
-                    {/*run button*/}
-                    <div className='run-button-pane'>
-                    <button
-                        className='run-button'
-                        onClick = {runCode}
-                        disabled = {!isReady}
-                    >
-                        compile and run
-                    </button>                
+
+            {/* main interactive section*/}
+            <CodePane
+                code={sourceCode}
+                output={output || (isReady ? "": "initializing virtual machine...")}
+                fileName='demo.mnky'
+                isEditable={true}
+                onCodeChange={setSourceCode}
+                onRun={runCode}
+                isReady={isReady}
+            />
+
+            {/* documentation section*/}
+            <div style={{marginTop: "3rem"}}>
+                <h3 className="project-name">documentation (current state)</h3>
+                {DOC_EXAMPLES.map((doc, idx) => (
+                    <div key={idx} style={{ marginBottom: "2rem"}}>
+                        {/* <h4>{doc.title}</h4> */}
+                        <p className="project-blurb" style={{ marginBottom: "1rem"}}>
+                            {doc.description}
+                        </p>
+                        <CodePane
+                            code={doc.code}
+                            output={doc.output}
+                            fileName={doc.example_filename}
+                            containerClass="example-container"
+                        />
                     </div>
-                </div>
-
-                {/*output text box*/}
-                <div className='pane'>
-                    <div className='pane-header'>output</div>
-                    <div className='output-text-box'>
-                    {output}
-                    </div>
-                </div>
-
+                ))}
             </div>
-            <div>
-                <br></br>
-                <h3>documentation (current state): </h3>
-
-                No designated <strong>print</strong> function (yet).
-                The last expression seen will be the only value printed.
-                <br></br>
-                In the code box below, we can see three expression statements, however, since the 3rd
-                line is the last expression processed in the program, its value (7) will be printed;
-                <br></br>
-
-                <div className='example-container'>
-                {/*code text box*/}
-                <div className='pane'>
-                    <div className='pane-header'>demo.mnky</div>
-                    <textarea
-                        className='code-editor'
-                        value = {`5 + 2;\n"hello" + "world";\n3 + 4;`}
-                        rows = {6}
-                    />
-                </div>
-
-                {/*output text box*/}
-                <div className='pane'>
-                    <div className='pane-header'>output</div>
-                    <div className='output-text-box'>
-                    {"7"}
-                    </div>
-                </div>
-
-            </div>
-
-            </div>
-
         </div>
     );
 }
