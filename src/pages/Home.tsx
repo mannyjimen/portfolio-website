@@ -46,16 +46,17 @@ function Home() {
             <li><a className = "top-page-link" href="https://github.com/mannyjimen" target="_blank" rel="noopener noreferrer">github</a></li>
           </ul>
           <p>
-            undergrad cs @ hunter <br></br> nyc
+            22 y/o aspiring swe
+            <br></br>hunter cs graduate <br></br> nyc
             <br></br> <br></br>
-            i love learning how software works under the hood.
+            currently (and always) learning how software works under the hood.
             <br></br>
-            very interested in compilers and parallelization.
+            very interested in compilers, parallelization, and infrastructure.
             <br></br>
             <br></br>
-            currently learning Go, coming from C++
+            love coding in C++ and Go
             <br></br>
-            (which is why the accent color for my site is blue...)
+            (hence the blue accent color...)
           </p>
         </div>
 {/* PROJECT SECTION */}
@@ -85,7 +86,7 @@ function Home() {
           </div>
         </div>
 {/*RECENT BLOG POSTS SECTION*/}
-        <div className = "blogs" style={{ marginTop: '3rem' }}>
+        <div className = "blogs">
           <h2 className = "blogposts-section-title">recent blog posts\n</h2>
           <div className = "projects">
             {recentPosts.map((post) => (
